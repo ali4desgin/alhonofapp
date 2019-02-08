@@ -103,7 +103,7 @@ public class RegisterActivity extends AppCompatActivity {
         String confirmpassword = confirmpasswordID.getText().toString();
         String phone = phoneID.getText().toString();
         String email = emailID.getText().toString();
-        Toast.makeText(RegisterActivity.this,"start",Toast.LENGTH_LONG).show();
+        Toast.makeText(RegisterActivity.this,"startgit push -u origin master",Toast.LENGTH_LONG).show();
 
 
         if(username.isEmpty() || password.isEmpty() || confirmpassword.isEmpty() || phone.isEmpty() || email.isEmpty() || city.isEmpty()){

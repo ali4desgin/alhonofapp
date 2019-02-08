@@ -100,8 +100,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
 
 
-
-
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
