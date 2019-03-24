@@ -1,8 +1,8 @@
-package com.example.ali4desgin.myapplication;
+package com.alhonof.app;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,18 +15,15 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.ali4desgin.myapplication.Api.Links;
-
+import com.alhonof.app.Api.Links;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-
-
 public class RegisterStep2 extends AppCompatActivity {
 
-
+    SharedPref sharedPref;
     EditText carnameID,carmodelID,carnumberID,issuedateID,expiredateID;
     Button doneButton;
     String user_id = "";
@@ -35,16 +32,16 @@ public class RegisterStep2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_step2);
 
-
-        Intent intent = getIntent();
-        user_id = intent.getStringExtra("user_id");
-
-        if(user_id.isEmpty()){
-
-            Intent intent2 = new Intent(RegisterStep2.this, RegisterActivity.class);
-            intent2.putExtra("user_id",user_id);
-            startActivity(intent2);
-        }
+        sharedPref =new SharedPref(RegisterStep2.this);
+      //  Intent intent = getIntent();
+        user_id = sharedPref.getString("user_id");
+//
+//        if(user_id.isEmpty()){
+//
+//            Intent intent2 = new Intent(RegisterStep2.this, RegisterActivity.class);
+//            intent2.putExtra("user_id",user_id);
+//            startActivity(intent2);
+//        }
 
 
         doneButton = findViewById(R.id.doneID);

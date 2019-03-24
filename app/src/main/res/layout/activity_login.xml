@@ -36,6 +36,19 @@
     </android.support.design.widget.AppBarLayout>
 
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Login"
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
     <RelativeLayout
 
         android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -66,7 +79,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="7dp"
             android:layout_marginRight="7dp"
             android:layout_marginBottom="16dp">
@@ -123,7 +136,7 @@
                     android:text="@string/action_sign_in"
                     android:textStyle="bold" />
 
-                ]
+
             </LinearLayout>
         </ScrollView>
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ali4desgin.myapplication">
-
+    package="com.alhonof.app">
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -15,6 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CountAcitvity"></activity>
+        <activity android:name=".CounterActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,7 +38,7 @@
         <activity android:name=".UsernameEditActivity" />
         <activity android:name=".PhoneEditActivity" />
         <activity android:name=".PasswordEditActivity" />
-        <activity android:name=".CountryEditActivity"></activity>
+        <activity android:name=".CountryEditActivity" />
     </application>
 
 </manifest>

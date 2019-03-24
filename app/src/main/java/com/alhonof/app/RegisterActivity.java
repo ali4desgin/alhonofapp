@@ -1,8 +1,8 @@
-package com.example.ali4desgin.myapplication;
+package com.alhonof.app;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,8 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bigkoo.pickerview.MyOptionsPickerView;
-import com.example.ali4desgin.myapplication.Api.Links;
-
+import com.alhonof.app.Api.Links;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -30,6 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     private Button ToRegisterStep2;
+    SharedPref sharedPref;
     EditText usernameID,passwordID,emailID,confirmpasswordID,phoneID;
     TextView cityTxt;
     String city = "";
@@ -48,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         cityTxt = (TextView) findViewById(R.id.cityTxt);
 
-
+        sharedPref =new SharedPref(RegisterActivity.this);
 
         final MyOptionsPickerView singlePicker = new MyOptionsPickerView(RegisterActivity.this);
         final ArrayList<String> items = new ArrayList<String>();
@@ -103,8 +103,6 @@ public class RegisterActivity extends AppCompatActivity {
         String confirmpassword = confirmpasswordID.getText().toString();
         String phone = phoneID.getText().toString();
         String email = emailID.getText().toString();
-        Toast.makeText(RegisterActivity.this,"startgit push -u origin master",Toast.LENGTH_LONG).show();
-
 
         if(username.isEmpty() || password.isEmpty() || confirmpassword.isEmpty() || phone.isEmpty() || email.isEmpty() || city.isEmpty()){
             Toast.makeText(RegisterActivity.this,"All field should be not empty",Toast.LENGTH_LONG).show();
@@ -142,12 +140,16 @@ public class RegisterActivity extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
 
+                            Toast.makeText(RegisterActivity.this,jsonObject.getString("message"),Toast.LENGTH_LONG).show();
+
+
                             if(jsonObject.getBoolean("res")){
 
                                 String id = jsonObject.getString("user_id");
 
                                 Intent intent = new Intent(RegisterActivity.this,RegisterStep2.class);
                                 intent.putExtra("user_id",id);
+                                sharedPref.saveToShared("user_id",id);
                                 startActivity(intent);
 
 
@@ -165,6 +167,8 @@ public class RegisterActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                Toast.makeText(RegisterActivity.this,error.toString(),Toast.LENGTH_LONG).show();
+
             }
         }){
 

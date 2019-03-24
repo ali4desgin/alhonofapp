@@ -24,8 +24,9 @@
             app:popupTheme="@style/AppTheme">
 
             <Button
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:id="@+id/cancelBtn"
 
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
@@ -39,8 +40,9 @@
                 android:src="@drawable/logo" />
 
             <Button
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:id="@+id/saveBtnID"
 
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
@@ -61,24 +63,26 @@
         android:layout_height="wrap_content"
         android:text="Update Username."
         android:textAlignment="center"/>
-    <TextView
-        android:layout_marginTop="10dp"
-        android:textSize="18dp"
-        android:layout_marginLeft="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="current county"
-        android:textAlignment="center"/>
 
     <TextView
-        android:layout_marginTop="10dp"
-        android:textSize="18dp"
-        android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="current username"
+        android:textAlignment="center"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/usernameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
         android:text="driver1"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_marginTop="10dp"
@@ -92,8 +96,9 @@
 
 
     <EditText
+        android:id="@+id/usernameEditTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Phone username"/>
+        android:hint="Phone username" />
 
 </LinearLayout>

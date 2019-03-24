@@ -1,4 +1,4 @@
-package com.example.ali4desgin.myapplication;
+package com.alhonof.app;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
 public class GeneralAdapter extends BaseAdapter {
@@ -43,7 +42,7 @@ public class GeneralAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view = LayoutInflater.from(context).inflate(R.layout.account_list_row,viewGroup,false);
+        view = LayoutInflater.from(context).inflate(R.layout.general_list_row,viewGroup,false);
 
         TextView textView = view.findViewById(R.id.textView3);
 

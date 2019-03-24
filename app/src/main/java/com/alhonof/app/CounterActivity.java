@@ -1,13 +1,14 @@
-package com.example.ali4desgin.myapplication;
+package com.alhonof.app;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class CountryEditActivity extends AppCompatActivity {
+public class CounterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_country_edit);
+        setContentView(R.layout.activity_counter);
     }
 }
+
